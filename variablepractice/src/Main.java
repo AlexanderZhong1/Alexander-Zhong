@@ -53,6 +53,14 @@ public class Main {
                 "Mr. James"
         };
 
+        System.out.print("+");
+        for (int x = 0; x <= 50; x++) {
+          System.out.print("-");
+        };
+        System.out.print("+");
+        for (int x = 1; x <= scheduleSubjects.length; x++) {
+            System.out.print("| " + x + " |");
 
+        }
     }
 }
