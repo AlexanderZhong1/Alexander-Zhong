@@ -13,6 +13,7 @@ public class Main {
         int z = 30;
         System.out.println((( x == y) || (x < z)) && (x*2 + y)/5 > z);
         System.out.println((10 == 20 || 10 < 2) && (20 + 20)/5 > 3);
+        System.out.println((10 == 20 || 10 < 2) && (5 > 30));
         System.out.println((false || false) && true);
         System.out.println(false);
 
