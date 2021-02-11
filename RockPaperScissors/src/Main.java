@@ -28,9 +28,23 @@ public class Main {
                 System.out.println("Scissors/Paper/Rock");
                 System.out.println("Enter your choice below ");
 
+                // Scissors == 1 and Paper == 2 and Rock == 3
+
                 // sees what the user chooses
                 String userChoice  = userInput.nextLine();
 
+                int userChoiceNum;
+
+                // turns user choice to number
+                if (userChoice == "scissors") {
+                    userChoiceNum = 1
+                };
+                else if (userChoice == "scissors") {
+                    userChoiceNum = 1
+                };
+                else if (userChoice == "scissors") {
+                    userChoiceNum = 1
+                };
 
                 // random num generator to general computer's choice
                 int max = 3;
@@ -40,7 +54,7 @@ public class Main {
                 // Scissors == 1 and Paper == 2 and Rock == 3
 
                 int computerNum = (int)(Math.random() * range) + min;
-                if (computerNum)
+                if (computerNum == 1 )
 
 
 
