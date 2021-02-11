@@ -32,6 +32,16 @@ public class Main {
                 String userChoice  = userInput.nextLine();
 
 
+                // random num generator to general computer's choice
+                int max = 3;
+                int min = 1;
+                int range = max - min + 1;
+
+                // Scissors == 1 and Paper == 2 and Rock == 3
+
+                int computerNum = (int)(Math.random() * range) + min;
+                if (computerNum)
+
 
 
             };
