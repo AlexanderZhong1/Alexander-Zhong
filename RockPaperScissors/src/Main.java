@@ -53,7 +53,7 @@ public class Main {
                 String playerWin;
 
                 // checks if pc wins or player
-                
+
                 if ((computerNum == 1 && userChoiceNum == 2) || (computerNum == 3 && userChoiceNum == 1) || (computerNum == 2 && userChoiceNum == 3)) {
                     playerWin = "lost";
                 }
