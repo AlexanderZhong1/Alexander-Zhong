@@ -33,7 +33,7 @@ public class Main {
                 // sees what the user chooses
                 String userChoice  = userInput.nextLine();
 
-                int userChoiceNum;
+                int userChoiceNum = 1;
 
                 // turns user choice to number
                 if (userChoice == "scissors") {
@@ -47,10 +47,22 @@ public class Main {
                 };
 
                 // random num generator to general computer's choice
-
+                int computerNum = (int)(Math.random() * 3) + 1;
                 // Scissors == 1 and Paper == 2 and Rock == 3
 
-                int computerNum = (int)(Math.random() * 3) + 1;
+                String playerWin;
+
+                // checks if pc wins or player
+                
+                if ((computerNum == 1 && userChoiceNum == 2) || (computerNum == 3 && userChoiceNum == 1) || (computerNum == 2 && userChoiceNum == 3)) {
+                    playerWin = "lost";
+                }
+                else if (computerNum == userChoiceNum) {
+                    playerWin = "tie";
+                }
+                else {
+                    playerWin = "win";
+                }
 
 
 
