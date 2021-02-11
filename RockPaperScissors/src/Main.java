@@ -37,24 +37,22 @@ public class Main {
 
                 // turns user choice to number
                 if (userChoice == "scissors") {
-                    userChoiceNum = 1
-                };
-                else if (userChoice == "scissors") {
-                    userChoiceNum = 1
-                };
-                else if (userChoice == "scissors") {
-                    userChoiceNum = 1
+                    userChoiceNum = 1;
+                }
+                else if (userChoice == "paper") {
+                    userChoiceNum = 2;
+                }
+                else if (userChoice == "rock") {
+                    userChoiceNum = 3;
                 };
 
                 // random num generator to general computer's choice
-                int max = 3;
-                int min = 1;
-                int range = max - min + 1;
 
                 // Scissors == 1 and Paper == 2 and Rock == 3
 
-                int computerNum = (int)(Math.random() * range) + min;
-                if (computerNum == 1 )
+                int computerNum = (int)(Math.random() * 3) + 1;
+
+
 
 
 
