@@ -35,7 +35,7 @@ public class Main {
         System.out.println((false == false) && 20 == 20);
         System.out.println(true && true);
         System.out.println(true);
-
+        
         //Question 5
         System.out.println((Math.abs(-2) == 2) || (Math.sqrt(Math.pow(9,2)) <= 9 && (-4 <= 4)));
         System.out.println(2 == 2 || (9 <= 9 && (-4 <= 4)));
