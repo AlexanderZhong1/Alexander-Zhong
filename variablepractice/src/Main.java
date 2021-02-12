@@ -54,13 +54,45 @@ public class Main {
         };
 
         System.out.print("+");
-        for (int x = 0; x <= 50; x++) {
+        for (int x = 0; x <= 60; x++) {
           System.out.print("-");
         };
-        System.out.print("+");
-        for (int x = 1; x <= scheduleSubjects.length; x++) {
-            System.out.print("| " + x + " |");
+        System.out.println("+");
 
-        }
+
+         // 13 and 9
+        System.out.print("| " + "1" + " |" + "                          " + scheduleSubjects[0]);
+        System.out.println(" |" + "        " + teachers[0] + " |");
+
+        System.out.print("| " + "2" + " |" + "                          " + scheduleSubjects[1]);
+        System.out.println(" |" + "      " + teachers[1] + " |");
+
+        System.out.print("| " + "3" + " |" + "                         " + scheduleSubjects[2]);
+        System.out.println(" |" + "        " + teachers[2] + " |");
+
+        System.out.print("| " + "4" + " |" + "                        " + scheduleSubjects[3]);
+        System.out.println(" |" + "       " + teachers[3] + " |");
+
+        // 25
+        System.out.print("| " + "5" + " |" + "           " + scheduleSubjects[4]);
+        System.out.println(" |" + "       " + teachers[4] + " |");
+
+
+        System.out.print("| " + "6" + " |" + "                             " + scheduleSubjects[5]);
+        System.out.println(" |" + "     " + teachers[5] + " |");
+
+        System.out.print("| " + "7" + " |" + "                        " + scheduleSubjects[6]);
+        System.out.println(" |" + "  " + teachers[6] + " |");
+
+        System.out.print("| " + "8" + " |" + "" + scheduleSubjects[7]);
+        System.out.println(" |" + "        " + teachers[7] + " |");
+
+        System.out.print("+");
+        for (int x = 0; x <= 60; x++) {
+            System.out.print("-");
+        };
+        System.out.println("+");
+
+
     }
 }
