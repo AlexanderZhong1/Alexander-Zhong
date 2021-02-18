@@ -15,15 +15,15 @@ public class Main {
             // creates the obj for user to input
             Scanner userInput = new Scanner(System.in);
 
-            System.out.println("Welcome to Rock Paper Scissors");
+            System.out.println( "\n" + "Welcome to Rock Paper Scissors");
             System.out.println("Please input everything in lowercase");
             System.out.println("Play up to 15 \n");
 
             // checks if the player or computer won the game and if not, continues the loop
-            while ((playerScore <= 15) || computerScore <= 15) {
+            while (playerScore < 15 || computerScore < 15) {
 
                 // every round shows score
-                System.out.println("Score");
+                System.out.println("\n" + "Score");
                 System.out.println("You: " + playerScore + " Opponent: " + computerScore);
                 System.out.println("Scissors/Paper/Rock");
                 System.out.println("Enter your choice below ");
@@ -31,18 +31,17 @@ public class Main {
                 // Scissors == 1 and Paper == 2 and Rock == 3
 
                 // sees what the user chooses
-                String userChoice  = userInput.nextLine();
+                String userChoice = userInput.nextLine();
 
                 int userChoiceNum = 1;
 
+
                 // turns user choice to number
-                if (userChoice == "scissors") {
+                if (userChoice.equals("scissors")) {
                     userChoiceNum = 1;
-                }
-                else if (userChoice == "paper") {
+                } else if (userChoice.equals("paper")) {
                     userChoiceNum = 2;
-                }
-                else if (userChoice == "rock") {
+                } else if (userChoice.equals("rock")) {
                     userChoiceNum = 3;
                 };
 
@@ -50,25 +49,53 @@ public class Main {
                 int computerNum = (int)(Math.random() * 3) + 1;
                 // Scissors == 1 and Paper == 2 and Rock == 3
 
+
                 String playerWin;
 
+                if (computerNum == 1) {
+                    System.out.println("Opponent chooses: Scissors");
+                }
+                else if (computerNum == 2) {
+                    System.out.println("Opponent chooses: Paper");
+                }
+                else if (computerNum == 3) {
+                    System.out.println("Opponent chooses: Rock");
+                };
                 // checks if pc wins or player
 
                 if ((computerNum == 1 && userChoiceNum == 2) || (computerNum == 3 && userChoiceNum == 1) || (computerNum == 2 && userChoiceNum == 3)) {
                     playerWin = "lost";
+                    computerScore++;
+                    System.out.println("You Lost!");
                 }
                 else if (computerNum == userChoiceNum) {
                     playerWin = "tie";
+                    System.out.println("Its a tie!");
                 }
                 else {
                     playerWin = "win";
+                    playerScore++;
+                    System.out.println("You Won!");
+                };
+
+                if (playerScore >= 15) {
+                    System.out.println("\n" + "Score");
+                    System.out.println("You: " + playerScore + " Opponent: " + computerScore);
+                    gameRunning = false;
+                    System.out.println("\n" + "Player Win the GAME!");
+                    break;
                 }
-
-
-
-
+                else if (computerScore >= 15) {
+                    System.out.println("\n" + "Score");
+                    System.out.println("You: " + playerScore + " Opponent: " + computerScore);
+                    gameRunning = false;
+                    System.out.println("\n" + "You LOST the Game!");
+                    break;
+                };
 
             };
+
+
         };
 
     }
