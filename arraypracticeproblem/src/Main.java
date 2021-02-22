@@ -86,7 +86,7 @@ public class Main {
         }
 
 
-        System.out.println("\n\n problem 4 (reversed the array)");
+        System.out.println("\n\n problem 4 (reversed the problem 2 array)");
         for (int x = 0; x < problem2.length; x++) {
             System.out.println("Index: " + x + "\tValue: " + problem2[x]);
         }
