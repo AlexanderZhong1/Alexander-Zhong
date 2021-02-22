@@ -43,6 +43,27 @@ public class Main {
                     userChoiceNum = 2;
                 } else if (userChoice.equals("rock")) {
                     userChoiceNum = 3;
+                }
+                else {
+                    boolean isCorrect = false;
+                    while (!isCorrect) {
+                        System.out.println("Wrong Input!\nPlease enter scissors/paper/rock:");
+                        userChoice = userInput.nextLine();
+                        if (userChoice.equals("scissors")) {
+                            userChoiceNum = 1;
+                            isCorrect = true;
+                            break;
+                        } else if (userChoice.equals("paper")) {
+                            userChoiceNum = 2;
+                            isCorrect = true;
+                            break;
+                        } else if (userChoice.equals("rock")) {
+                            userChoiceNum = 3;
+                            isCorrect = true;
+                            break;
+                        }
+                    }
+
                 };
 
                 // random num generator to general computer's choice
