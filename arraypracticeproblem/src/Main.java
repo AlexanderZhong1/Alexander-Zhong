@@ -63,21 +63,33 @@ public class Main {
         }
         System.out.println("\n\nProblem 3");
         System.out.println("These two were swapped");
-        System.out.println("Index: " + randomindex1 + "\tValue" + problem2[randomindex1]);
-        System.out.println("Index: " + randomindex2 + "\tValue" + problem2[randomindex2] + "\nto");
+        System.out.println("Index: " + randomindex1 + "\tValue: " + problem2[randomindex1]);
+        System.out.println("Index: " + randomindex2 + "\tValue: " + problem2[randomindex2] + "\nto");
 
 
 
-        int firstindexnum = problem2[randomindex1];
-        int secondindexnum = problem2[randomindex2];
+        int problem2temp = problem2[randomindex1];
 
-        problem2[randomindex1] = secondindexnum;
-        problem2[randomindex2] = firstindexnum;
+        problem2[randomindex1] = problem2[randomindex2];
+        problem2[randomindex2] = problem2temp;
 
-        System.out.println("Index: " + randomindex1 + "\tValue" + problem2[randomindex1]);
-        System.out.println("Index: " + randomindex2 + "\tValue" + problem2[randomindex2]);
+        System.out.println("Index: " + randomindex1 + "\tValue: " + problem2[randomindex1]);
+        System.out.println("Index: " + randomindex2 + "\tValue: " + problem2[randomindex2]);
+
+        // problem 4
 
 
+        for (int x = 0; x < problem2.length / 2; x++) {
+            int temp = problem2[x];
+            problem2[x] = problem2[problem2.length - x - 1];
+            problem2[problem2.length - x - 1] = temp;
+        }
+
+
+        System.out.println("\n\n problem 4 (reversed the array)");
+        for (int x = 0; x < problem2.length; x++) {
+            System.out.println("Index: " + x + "\tValue: " + problem2[x]);
+        }
 
 
 
