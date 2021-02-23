@@ -5,6 +5,8 @@ public class Main {
 
         int[] numbers1 = new int[20];
 
+        // generate random numbers for the array
+
         for (int x = 0; x < numbers1.length; x++) {
             int randomNum = (int)(Math.random() * 6) + 1;
             numbers1[x] = randomNum;
@@ -18,6 +20,9 @@ public class Main {
             };
         }
 
+
+        //prints out the problem
+
         System.out.println("Problem 1");
         for (int x = 0; x < numbers1.length; x++) {
             System.out.println("Index: " + x + "\tValue: " + numbers1[x]);
@@ -27,12 +32,18 @@ public class Main {
 
         // second problem
 
+        // initialize the second array
+
         int[] problem2 = new int[10];
+
+        // generates the second random array
 
         for (int x = 0; x < problem2.length; x++) {
             int randomNum = (int)(Math.random() * 100) + 1;
             problem2[x] = randomNum;
         }
+
+        // finds the average
 
         int problem2average;
         int problem2total = 0;
@@ -41,6 +52,8 @@ public class Main {
         }
 
         problem2average = (int)(problem2total / 10);
+
+        // prints out the problem
 
         System.out.println("\nProblem 2");
         for (int x = 0; x < problem2.length; x++) {
@@ -52,6 +65,8 @@ public class Main {
 
         // problem 3
 
+        // randomize the two index position to swap
+
         int randomindex1 = (int)(Math.random() * 10);
         int randomindex2 = (int)(Math.random() * 10);
 
@@ -61,12 +76,15 @@ public class Main {
                 break;
             }
         }
+
+
         System.out.println("\n\nProblem 3");
         System.out.println("These two were swapped");
         System.out.println("Index: " + randomindex1 + "\tValue: " + problem2[randomindex1]);
         System.out.println("Index: " + randomindex2 + "\tValue: " + problem2[randomindex2] + "\nto");
 
 
+        // switches the numbers using temp variable
 
         int problem2temp = problem2[randomindex1];
 
@@ -79,6 +97,8 @@ public class Main {
         // problem 4
 
 
+        // using temp variable to swap two numbers at a time until they reach the midpoint
+
         for (int x = 0; x < problem2.length / 2; x++) {
             int temp = problem2[x];
             problem2[x] = problem2[problem2.length - x - 1];
@@ -90,8 +110,6 @@ public class Main {
         for (int x = 0; x < problem2.length; x++) {
             System.out.println("Index: " + x + "\tValue: " + problem2[x]);
         }
-
-
 
     }
 }
