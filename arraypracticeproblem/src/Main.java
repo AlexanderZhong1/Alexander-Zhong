@@ -17,7 +17,7 @@ public class Main {
         for (int x = 0; x < numbers1.length; x++) {
             if (numbers1[x] == 1) {
                 numberOf1++;
-            };
+            }
         }
 
 
