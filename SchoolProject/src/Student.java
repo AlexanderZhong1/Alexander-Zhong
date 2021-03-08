@@ -46,6 +46,8 @@ public class Student {
         return studentID;
     }
 
+    // turns the object into string
+
     @Override
     public String toString() {
         return "Name: " + firstName + " " + lastName + " Grade: " + grade;
