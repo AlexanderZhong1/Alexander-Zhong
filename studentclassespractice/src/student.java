@@ -1,13 +1,11 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class student {
 
     public String firstName;
     public int ID = 0;
-    ArrayList<courses> studentCourses = new ArrayList<>();
+    ArrayList<courses> studentCourses = new ArrayList<courses>();
     private static final AtomicInteger counter = new AtomicInteger(0);
 
     public student(String firstName, String[] coursesList) {
@@ -19,8 +17,19 @@ public class student {
 
         }
         else {
-            for (int x = 0; x < coursesList.length;x++}
+            for (int x = 0; x < coursesList.length;x++) {
+            studentCourses.add(new courses(coursesList[x], 0));
+        }
+        }
 
+    }
+
+    public void setCourseGrade(String name, int grade) {
+        for (int x = 0; x < studentCourses.size(); x++) {
+            if (studentCourses.get(x).getCourseName() == name) {
+                studentCourses.get(x).setStudentGrade(grade);
+            }
+        }
     }
 
     public void addCourse(String courseName, int courseGrade) {
@@ -34,16 +43,16 @@ public class student {
 
     public void printCourses() {
         System.out.print("[");
-        for (int x = 0; x >= studentCourses.size(); x++) {
+        for (int x = 0; x < studentCourses.size(); x++) {
             System.out.print(studentCourses.get(x) + ", ");
-            System.out.println("]");
         }
+        System.out.println("]");
     }
 
     public int findAverage() {
         int average;
         double total = 0;
-        for (int x = 0; x >= studentCourses.size(); x++){
+        for (int x = 0; x < studentCourses.size(); x++){
             total += studentCourses.get(x).getStudentGrade();
         }
         average = (int)total/studentCourses.size();

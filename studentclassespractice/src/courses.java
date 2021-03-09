@@ -13,6 +13,9 @@ public class courses {
 
     }
 
+    public courses(String courseName) {
+    }
+
     public int getStudentGrade() {
         return studentGrade;
     }
@@ -21,12 +24,13 @@ public class courses {
         return courseName;
     }
 
+    public void setStudentGrade(int studentGrade) {
+        this.studentGrade = studentGrade;
+    }
+
     @Override
 
     public String toString() {
-        return "courses{" +
-                "courseName='" + courseName + '\'' +
-                ", studentGrade=" + studentGrade +
-                '}';
+        return courseName + " " + studentGrade;
     }
 }
