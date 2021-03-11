@@ -96,9 +96,25 @@ public class Time {
 
     }
 
+    public void previousSecond() {
+        second--;
+        if (second < 0) {
+            this.second = 59;
+            minute--;
+            if (minute < 0) {
+                minute = 59;
+                hour--;
+                if (hour < 0) {
+                    hour = 23;
+                }
+            }
+        }
+
+    }
 
 
-    
+
+
 
 
 
