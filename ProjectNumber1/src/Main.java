@@ -42,6 +42,7 @@ public class Main {
             String tmp;
             if (alphabet.charAt(alphabet.indexOf(s.charAt(x) + 1)) == s.charAt(x + 1)) {
 
+
             }
         }
 
