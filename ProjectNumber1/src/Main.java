@@ -30,6 +30,22 @@ public class Main {
     //Code your solution to problem number 3 here
     static String problemThree(String s){
         //your code here
+        String answer;
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        char[] sArray = s.toCharArray();
+        char[] alphabetArray = alphabet.toCharArray();
+
+
+
+
+        for (int x = 0; x < s.length(); x++) {
+            String tmp;
+            if (alphabet.charAt(alphabet.indexOf(s.charAt(x) + 1)) == s.charAt(x + 1)) {
+
+            }
+        }
+
+
         return s;
     }
     public static void main(String[] args) {
