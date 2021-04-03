@@ -29,7 +29,22 @@ public class Main {
     }
     //Code your solution to problem number 3 here
     static String problemThree(String s){
-        //your code here
+        String answer = "";
+        String tmp = "";
+
+        for (int x = 0; x < s.length() + 1; x++) {
+            int counter = 1;
+            boolean isAlpha = false;
+            if (s.charAt(x) < s.charAt(x + 1)) {
+                tmp += s.charAt(x);
+                isAlpha = true;
+            }
+            while (isAlpha == true) {
+                if (s.charAt(x + counter) < s.charAt(x + counter + 1)) {
+
+                }
+            }
+        }
         return s;
     }
     public static void main(String[] args) {
