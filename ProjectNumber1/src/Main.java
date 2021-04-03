@@ -35,17 +35,42 @@ public class Main {
         for (int x = 0; x < s.length() + 1; x++) {
             int counter = 1;
             boolean isAlpha = false;
-            if (s.charAt(x) < s.charAt(x + 1)) {
-                tmp += s.charAt(x);
-                isAlpha = true;
-            }
-            while (isAlpha == true) {
-                if (s.charAt(x + counter) < s.charAt(x + counter + 1)) {
-
+            if (x < s.length() - 1) {
+                if (s.charAt(x) <= s.charAt(x + 1)) {
+                    tmp += s.charAt(x);
+                    tmp += s.charAt(x + counter);
+                    isAlpha = true;
                 }
+                while (isAlpha == true) {
+                    if ((x + counter < s.length() - 1)) {
+                        if (s.charAt(x + counter) <= s.charAt(x + counter + 1)) {
+                            tmp += s.charAt(x + counter + 1);
+                            counter++;
+                        }
+                        else {
+                            isAlpha = false;
+                        }
+                    }
+                    else {
+                        isAlpha = false;
+                    }
+                }
+
+                if (tmp.length() > answer.length()) {
+                    answer = tmp;
+                }
+                tmp = "";
+
             }
+
         }
-        return s;
+        if (answer == "") {
+            String answer2 = "";
+            answer2 += s.charAt(0);
+            return answer2;
+        }
+
+        return answer;
     }
     public static void main(String[] args) {
         /*
