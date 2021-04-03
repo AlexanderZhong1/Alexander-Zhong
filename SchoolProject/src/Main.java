@@ -28,13 +28,20 @@ public class Main {
         // prints out all the teachers
         System.out.println(school.showTeachers());
 
+        // deletes the students
+
         school.deleteStudent("Bob", "Chan");
         school.deleteStudent("Pat", "Smith");
 
+        // shows the students to check if students are deleted
+
         System.out.println(school.showStudents());
 
+        // deletes the teachers
         school.deleteTeacher("Alex", "Bob");
 
+
+        // checks if teachers are deleted
         System.out.println(school.showTeachers());
 
  
