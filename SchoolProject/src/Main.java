@@ -44,7 +44,7 @@ public class Main {
         // checks if teachers are deleted
         System.out.println(school.showTeachers());
 
-
+ 
 
 
 

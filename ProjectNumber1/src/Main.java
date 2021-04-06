@@ -29,25 +29,48 @@ public class Main {
     }
     //Code your solution to problem number 3 here
     static String problemThree(String s){
-        //your code here
-        String answer;
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        char[] sArray = s.toCharArray();
-        char[] alphabetArray = alphabet.toCharArray();
+        String answer = "";
+        String tmp = "";
 
+        for (int x = 0; x < s.length() + 1; x++) {
+            int counter = 1;
+            boolean isAlpha = false;
+            if (x < s.length() - 1) {
+                if (s.charAt(x) <= s.charAt(x + 1)) {
+                    tmp += s.charAt(x);
+                    tmp += s.charAt(x + counter);
+                    isAlpha = true;
+                }
+                while (isAlpha == true) {
+                    if ((x + counter < s.length() - 1)) {
+                        if (s.charAt(x + counter) <= s.charAt(x + counter + 1)) {
+                            tmp += s.charAt(x + counter + 1);
+                            counter++;
+                        }
+                        else {
+                            isAlpha = false;
+                        }
+                    }
+                    else {
+                        isAlpha = false;
+                    }
+                }
 
-
-
-        for (int x = 0; x < s.length(); x++) {
-            String tmp;
-            if (alphabet.charAt(alphabet.indexOf(s.charAt(x) + 1)) == s.charAt(x + 1)) {
-
+                if (tmp.length() > answer.length()) {
+                    answer = tmp;
+                }
+                tmp = "";
 
             }
+
+        }
+        if (answer == "") {
+            String answer2 = "";
+            answer2 += s.charAt(0);
+            return answer2;
         }
 
-
-        return s;
+        return answer;
     }
     public static void main(String[] args) {
         /*
