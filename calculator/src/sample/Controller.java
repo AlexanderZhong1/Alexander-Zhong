@@ -13,19 +13,26 @@ public class Controller {
     private ArrayList<String> numbersList = new ArrayList<>();
     private ArrayList<String> operatorsList = new ArrayList<>();
     private boolean isInputNumber = true;
+    private boolean clickEqual = false;
+    private boolean newEquation = false;
 
     public void addNumber(String num) {
+        if (newEquation == true) {
+            textDisplay.setText("");
+        }
         String display = textDisplay.getText() + num;
         textDisplay.setText(display);
 
         // makes sure they don't add operators twice
-        if (isInputNumber == false) {
+        if (isInputNumber == false || newEquation == true) {
             isInputNumber = true;
+            clickEqual = false;
+            newEquation = false;
         }
     }
 
     public void addOperator(String operator) {
-        if (isInputNumber == true) {
+        if (isInputNumber == true && !textDisplay.getText().isEmpty()) {
             isInputNumber = false;
             numbersList.add(textDisplay.getText());
             textDisplay.setText("");
@@ -44,6 +51,32 @@ public class Controller {
     }
 
     public void buttonEqual(ActionEvent actionEvent) {
+        if (textDisplay.getText().isEmpty() == false) {
+            String currentNumber = textDisplay.getText();
+            numbersList.add(currentNumber);
+        }
+
+        if (numbersList.size() >= 2 && clickEqual == false && !operatorsList.isEmpty()) {
+            clickEqual = true;
+            isInputNumber = false;
+            int total = Integer.parseInt(numbersList.get(0));
+            for (int x = 1; x < numbersList.size(); x++) {
+                if (operatorsList.get(x - 1) == "plus") {
+                    total += Integer.parseInt(numbersList.get(x));
+                }
+                else if (operatorsList.get(x - 1) == "minus") {
+                    total -= Integer.parseInt(numbersList.get(x));
+                }
+                else if (operatorsList.get(x - 1) == "multiply") {
+                    total *= Integer.parseInt(numbersList.get(x));
+                }
+
+            }
+            textDisplay.setText(Integer.toString(total));
+            numbersList.clear();
+            operatorsList.clear();
+            newEquation = true;
+        }
     }
 
     public void buttonPlus(ActionEvent actionEvent) {
@@ -79,7 +112,7 @@ public class Controller {
     }
 
     public void buttonMultiply(ActionEvent actionEvent) {
-        addOperator("Multiply");
+        addOperator("multiply");
     }
 
     public void button7(ActionEvent actionEvent) {
@@ -96,8 +129,19 @@ public class Controller {
 
 
     public void buttonC(ActionEvent actionEvent) {
+        textDisplay.setText("Cleared");
+        numbersList.clear();
+        operatorsList.clear();
+        newEquation = true;
+        isInputNumber = true;
+        clickEqual = false;
+
     }
 
     public void buttonDelete(ActionEvent actionEvent) {
+        if (newEquation == false && textDisplay.getText().isEmpty() == false) {
+
+            textDisplay.setText(textDisplay.getText().substring(0, textDisplay.getText().length() - 1));
+        }
     }
 }
