@@ -32,10 +32,10 @@ public class Controller {
     }
 
     public void addOperator(String operator) {
-        if (isInputNumber == true && !textDisplay.getText().isEmpty()) {
+        if (isInputNumber == true && !textDisplay.getText().isEmpty() && newEquation != true) {
             isInputNumber = false;
             numbersList.add(textDisplay.getText());
-            textDisplay.setText("");
+            textDisplay.clear();
             operatorsList.add(operator);
         }
 
@@ -134,7 +134,7 @@ public class Controller {
         operatorsList.clear();
         newEquation = true;
         isInputNumber = true;
-        clickEqual = false;
+        clickEqual = true;
 
     }
 
