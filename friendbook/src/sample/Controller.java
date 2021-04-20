@@ -23,7 +23,9 @@ public class Controller {
 
     public void deleteButton(ActionEvent actionEvent) {
         friend friendselect = friendList.getSelectionModel().getSelectedItem();
-        friendList.getItems().remove(friendList.getItems().indexOf(friendselect));
+        if (friendselect != null) {
+            friendList.getItems().remove(friendList.getItems().indexOf(friendselect));
+        }
     }
 
     public void displayFriend(MouseEvent mouseEvent) {
