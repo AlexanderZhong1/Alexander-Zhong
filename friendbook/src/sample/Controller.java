@@ -29,7 +29,7 @@ public class Controller {
     }
 
     public void displayFriend(MouseEvent mouseEvent) {
-        if (friendList.getItems().size() != 0) {
+        if (friendList.getItems().size() != 0 && friendList.getSelectionModel().getSelectedItem() != null) {
             friend friendselect = friendList.getSelectionModel().getSelectedItem();
             firstDisplay.setText("Firstname: " + friendselect.getFirstName());
             lastDisplay.setText(("Lastname: " + friendselect.getLastName()));
