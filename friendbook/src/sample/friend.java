@@ -23,14 +23,6 @@ public class friend {
         return lastName;
     }
 
-    public void writeToFile() throws IOException {
-        FileWriter fw = new FileWriter("friends.txt", true);
-        BufferedWriter bw = new BufferedWriter(fw);
-
-
-
-    }
-
     @Override
     public String toString() {
         return firstName + " " + lastName;
