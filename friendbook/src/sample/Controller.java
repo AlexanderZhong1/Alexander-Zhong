@@ -16,7 +16,7 @@ public class Controller {
     public void addButton(ActionEvent actionEvent) {
         if (firstText.getText().isEmpty() == false && lastText.getText().isEmpty() == false) {
             friendList.getItems().add(new friend(firstText.getText(), lastText.getText()));
-            firstText.clear();
+            firstText.clear(); 
             lastText.clear();
         }
     }
